@@ -42,4 +42,186 @@
     font-size:clamp(38px, 6.6vw, 64px); line-height:1.04; letter-spacing:-0.01em;
   }
   h1 em{font-style:italic; font-weight:500; color:var(--rust);}
-  .tagline{margin-top:22px; max-width:600px
+  .tagline{margin-top:22px; max-width:600px; font-size:18px; color:#3a352b;}
+  .role-strip{
+    margin-top:34px; display:flex; gap:24px; flex-wrap:wrap;
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+  }
+  .role-strip span::before{content:"— "; color:var(--brass);}
+
+  section{padding:64px 0; border-bottom:1px solid var(--paper-dim);}
+  .section-head{display:flex; align-items:baseline; gap:16px; margin-bottom:36px;}
+  .section-head .mark{font-size:14px;}
+  .section-head h2{font-family:'Fraunces', serif; font-weight:600; font-size:28px;}
+  .section-sub{margin-top:-22px; margin-bottom:32px; font-size:14.5px; color:#3a352b; max-width:620px;}
+
+  .stack-box{
+    background:var(--ink); color:var(--paper);
+    padding:24px 26px; font-family:'JetBrains Mono', monospace; font-size:13px;
+  }
+  .stack-box .line{display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px dashed #45402f;}
+  .stack-box .line:last-child{border-bottom:none;}
+  .stack-box .v{color:var(--phosphor);}
+
+  .pipeline{
+    display:flex; align-items:center; flex-wrap:wrap; gap:0;
+    font-family:'JetBrains Mono', monospace; font-size:12.5px;
+    margin:30px 0 8px;
+  }
+  .node{
+    background:var(--ink); color:var(--phosphor);
+    padding:8px 14px; border:1px solid var(--brass);
+  }
+  .arrow{color:var(--brass); padding:0 10px; font-size:14px;}
+
+  .proj{
+    display:grid; grid-template-columns:64px 1fr; gap:20px;
+    padding:26px 0; border-top:1px solid var(--paper-dim);
+  }
+  .proj:first-of-type{border-top:none;}
+  .proj-mark{font-family:'JetBrains Mono', monospace; color:var(--brass); font-size:13px; padding-top:4px;}
+  .proj h3{font-family:'Fraunces', serif; font-size:21px; font-weight:600; margin-bottom:6px;}
+  .proj .result{
+    font-family:'JetBrains Mono', monospace; font-size:12px;
+    color:#2c8f63; margin-top:4px;
+  }
+  .proj .desc{font-size:14.5px; color:#3a352b; max-width:640px; margin-top:6px;}
+  .proj .tags{margin-top:12px; display:flex; gap:8px; flex-wrap:wrap;}
+  .tag{
+    font-family:'JetBrains Mono', monospace; font-size:11px;
+    border:1px solid var(--phosphor); padding:3px 9px; color:#2c8f63;
+  }
+
+  .integrations{display:grid; grid-template-columns:repeat(3,1fr); gap:0;}
+  @media (max-width:680px){.integrations{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:440px){.integrations{grid-template-columns:1fr;}}
+  .integration{
+    padding:16px 0; border-bottom:1px dashed var(--brass);
+    font-family:'JetBrains Mono', monospace; font-size:13px;
+  }
+  .integration .role{display:block; font-size:11px; color:var(--brass); text-transform:uppercase; margin-top:4px;}
+
+  footer{padding:60px 0 80px;}
+  .contact-line{
+    font-family:'Fraunces', serif; font-size:clamp(26px,4.2vw,38px); font-style:italic;
+    max-width:680px; margin-bottom:28px;
+  }
+  .contact-row{display:flex; gap:28px; flex-wrap:wrap; font-family:'JetBrains Mono', monospace; font-size:13.5px;}
+  .contact-row a{border-bottom:1px solid var(--rust); padding-bottom:2px;}
+  .foot-note{margin-top:48px; font-size:12px; color:var(--brass); font-family:'JetBrains Mono', monospace;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Gravix Digital · Karachi</div>
+    <h1>Affan Baig <em>—</em><br>I build the pipelines<br>that run the business.</h1>
+    <p class="tagline">AI automation engineer specializing in agentic workflows, LLM pipelines, and CRM systems built on n8n, the Claude API, and local inference — turning manual publishing operations into automated, low-cost systems.</p>
+    <div class="role-strip">
+      <span>AI Automation Engineer</span>
+      <span>Pipeline Architect</span>
+      <span>Founder, Gravix Digital</span>
+    </div>
+  </header>
+
+  <section id="stack">
+    <div class="section-head"><span class="mark">[ ⌐ ]</span><h2>Stack</h2></div>
+    <div class="stack-box">
+      <div class="line"><span>orchestration</span><span class="v">n8n · Make.com</span></div>
+      <div class="line"><span>llm api / editing-formatting</span><span class="v">Claude API (Anthropic)</span></div>
+      <div class="line"><span>local inference</span><span class="v">Ollama / Mistral</span></div>
+      <div class="line"><span>cloud / model access</span><span class="v">AWS Bedrock (Claude, Llama, Mistral)</span></div>
+      <div class="line"><span>backend</span><span class="v">Flask · Laravel · Python (argparse agents)</span></div>
+      <div class="line"><span>frontend / app builder</span><span class="v">Lovable</span></div>
+      <div class="line"><span>database</span><span class="v">Supabase</span></div>
+      <div class="line"><span>automation triggers</span><span class="v">Tally → Claude API → Notion → Trello</span></div>
+      <div class="line"><span>cost achieved</span><span class="v">~$0.03 / generated chapter</span></div>
+    </div>
+  </section>
+
+  <section id="pipelines">
+    <div class="section-head"><span class="mark">[run]</span><h2>Pipelines Shipped</h2></div>
+
+    <div class="proj">
+      <div class="proj-mark">01</div>
+      <div>
+        <h3>Chapter Generator v1.0</h3>
+        <div class="pipeline">
+          <span class="node">n8n trigger</span><span class="arrow">→</span>
+          <span class="node">Ollama / Mistral draft</span><span class="arrow">→</span>
+          <span class="node">Claude API edit + format</span><span class="arrow">→</span>
+          <span class="node">Flask → .docx</span>
+        </div>
+        <p class="desc">A hybrid drafting system: local Mistral writes a first pass for free, the Claude API handles editing and formatting for quality, and Flask packages the output as a delivered manuscript chapter.</p>
+        <div class="result">→ ~$0.03 per chapter, fully documented end to end</div>
+        <div class="tags"><span class="tag">n8n</span><span class="tag">Ollama</span><span class="tag">Claude API</span><span class="tag">Flask</span></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-mark">02</div>
+      <div>
+        <h3>Internal CRM Build</h3>
+        <p class="desc">Full-stack operations platform for client and project management — Kanban pipelines, role-based access, and service/engagement-type fields modeled on real publishing workflows.</p>
+        <div class="result">→ live system, custom data model on Supabase</div>
+        <div class="tags"><span class="tag">Lovable</span><span class="tag">Supabase</span><span class="tag">Laravel</span></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-mark">03</div>
+      <div>
+        <h3>Lead Capture & Sales Automation</h3>
+        <div class="pipeline">
+          <span class="node">Tally form</span><span class="arrow">→</span>
+          <span class="node">Claude API</span><span class="arrow">→</span>
+          <span class="node">Notion</span><span class="arrow">→</span>
+          <span class="node">Trello</span>
+        </div>
+        <p class="desc">Built to handle ~500 daily inbound leads with two manual salespeople as the bottleneck — automated qualification, scoring, and structured handoff into a call queue. Evaluated GoHighLevel and a custom-built replacement.</p>
+        <div class="result">→ production pipeline, 200-lead outreach workbook delivered as an 8-tab Excel build</div>
+        <div class="tags"><span class="tag">Make.com</span><span class="tag">Claude API</span><span class="tag">Notion</span><span class="tag">Trello</span></div>
+      </div>
+    </div>
+
+    <div class="proj">
+      <div class="proj-mark">04</div>
+      <div>
+        <h3>Writer / Editor / Formatter Agents</h3>
+        <p class="desc">A set of standalone Python agents built on the Claude API, each scoped to one job in the manuscript pipeline and driven via argparse for direct, hands-on automation — built while learning Python from the ground up.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Claude API</span><span class="tag">argparse</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="integrations">
+    <div class="section-head"><span class="mark">[api]</span><h2>Integrations</h2></div>
+    <p class="section-sub">Tools and APIs wired into the pipelines above, each handling one job in the chain from input to delivered output.</p>
+    <div class="integrations">
+      <div class="integration">Claude API<span class="role">drafting · editing · formatting</span></div>
+      <div class="integration">AWS Bedrock<span class="role">model access on credits</span></div>
+      <div class="integration">Ollama / Mistral<span class="role">local inference</span></div>
+      <div class="integration">n8n<span class="role">workflow orchestration</span></div>
+      <div class="integration">Make.com<span class="role">no-code automation</span></div>
+      <div class="integration">Supabase<span class="role">database / auth</span></div>
+      <div class="integration">Tally<span class="role">form intake</span></div>
+      <div class="integration">Notion<span class="role">structured records</span></div>
+      <div class="integration">Trello<span class="role">task / queue routing</span></div>
+      <div class="integration">Lovable<span class="role">app scaffolding</span></div>
+      <div class="integration">Laravel<span class="role">backend services</span></div>
+      <div class="integration">Flask<span class="role">document generation API</span></div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="contact-line">Have a workflow that should run itself — <span class="mark" style="font-style:normal;">let's build it.</span></div>
+    <div class="contact-row">
+      <a href="mailto:baigaffan69@gmail.com">baigaffan69@gmail.com</a>
+    </div>
+    <div class="foot-note">Karachi, Pakistan — pipelines documented end to end, no black boxes.</div>
+  </footer>
+</div>
+
+</body>
+                                                                                                                        </html>
